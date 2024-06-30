@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.sr.ht/~mattmundell/codemirror-lang-git-log"
+    "url": "git+https://git.sr.ht/~mattmundell/codemirror-lang-git-log"
   },
   "type": "module",
   "main": "dist/index.cjs",
