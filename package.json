@@ -2,6 +2,7 @@
   "name": "codemirror-lang-git-log",
   "version": "0.1.1",
   "description": "git log language support for CodeMirror",
+  "homepage": "https://git.sr.ht/~mattmundell/codemirror-lang-git-log",
   "scripts": {
     "test": "mocha test/test.js",
     "prepare": "rollup -c"
