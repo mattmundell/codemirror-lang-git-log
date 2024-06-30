@@ -1,0 +1,26 @@
+@top Log { Entry* }
+
+Entry { Meta Body }
+
+Meta { Commit Header* }
+
+Commit { commit space+ Hash nl }
+
+Header { char ( space | char | commit )* nl }
+
+Hash { char+ }
+
+Body { (Line nl)* Line (nl | eof) }
+
+Line { (space ( char | space | commit )* | ()) }
+
+@tokens {
+  commit { "commit" }
+
+  char { ![ \t\r\n] }
+  nl { "\n" }
+  eof { @eof }
+  space { $[ \t] }
+
+  @precedence { commit, char, space, nl }
+}

@@ -1,0 +1,68 @@
+# Empty doc
+
+==>
+Log()
+
+# One header
+
+commit abc
+  body
+
+==>
+Log(Entry(Meta(Commit(Hash)), Body(Line)))
+
+# Two headers
+
+commit abc
+header2
+  body
+
+==>
+Log(Entry(Meta(Commit(Hash), Header), Body(Line)))
+
+# Empty lines in body
+
+commit abc
+header2
+  line1
+
+  line2
+
+==>
+Log(Entry(Meta(Commit(Hash), Header), Body(Line, Line, Line)))
+
+# Real eg
+
+commit 8e613360758f0b1ea425332160a3bc0a97f32376
+Author: Matt Example <email@example.org>
+Date:   2024-05-28 22:15:48 +0200
+
+    Remove const from get_next initializer arg
+
+    Some of the GET iterator initializers modify their get_data_t arg, so
+    this allows these initializers to be passed to get_next.
+
+==>
+Log(Entry(Meta(Commit(Hash), Header, Header), Body(Line, Line, Line, Line, Line)))
+
+# Body line is just space
+
+commit abc
+header2
+  line below has two spaces
+  
+  line3
+
+==>
+Log(Entry(Meta(Commit(Hash), Header), Body(Line, Line, Line)))
+
+# Two entries
+
+commit abc
+header2
+  body
+commit abc
+  body
+
+==>
+Log(Entry(Meta(Commit(Hash), Header), Body(Line)), Entry(Meta(Commit(Hash)), Body(Line)))
