@@ -4,7 +4,7 @@ Entry { Meta Body }
 
 Meta { Commit Header* }
 
-Commit { commit space+ Hash nl }
+Commit { commit space+ Hash ( space ( space | char )* )? nl }
 
 Header { char ( space | char | commit )* nl }
 

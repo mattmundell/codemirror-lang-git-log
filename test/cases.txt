@@ -97,3 +97,14 @@ Date:   2024-06-12 14:44:49 +0200
 Log(Entry(Meta(Commit(Hash), Header, Header), Body(Line, Line, Line, Line, Line, Line)),
     Entry(Meta(Commit(Hash), Header, Header), Body(Line, Line, Line)),
     Entry(Meta(Commit(Hash), Header, Header, Header), Body(Line, Line, Line, Line)))
+
+# trailing text after commit
+
+commit cd5f434b3db36cf4bf4f2cd43eb7c1c65958086d (HEAD -> main)
+Author: Matt Eg <person@example.com>
+Date:   2024-08-02 13:04:06 +0200
+
+    fix git show
+
+==>
+Log(Entry(Meta(Commit(Hash), Header, Header), Body(Line, Line)))
